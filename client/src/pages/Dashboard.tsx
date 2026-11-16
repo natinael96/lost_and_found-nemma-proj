@@ -8,7 +8,6 @@ import {
   dismissMatch,
   confirmMatch,
   updateReportStatus,
-  resetDatabase,
 } from "../services/api";
 import { DashboardStats } from "../components/DashboardStats";
 import { MatchList } from "../components/MatchList";
@@ -32,7 +31,6 @@ export const Dashboard: React.FC = () => {
   const [matches, setMatches] = useState<MatchPair[]>([]);
   const [metadata, setMetadata] = useState<MetadataResponse | null>(null);
   const [isLoadingMatches, setIsLoadingMatches] = useState(true);
-  const [isResetting, setIsResetting] = useState(false);
   const [activeTab, setActiveTab] = useState<"matches" | "submit" | "reports">(getInitialTab);
   const [submitType, setSubmitType] = useState<"lost" | "found">("lost");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -116,20 +114,6 @@ export const Dashboard: React.FC = () => {
     await loadData();
   };
 
-  // Handle reset to sample dataset
-  const handleReset = async () => {
-    setIsResetting(true);
-    try {
-      await resetDatabase();
-      showToast("Database reset to sample state with 7 benchmark test cases!");
-      await loadData();
-    } catch (err) {
-      console.error("Reset failed:", err);
-    } finally {
-      setIsResetting(false);
-    }
-  };
-
   // Computed summary metrics
   const totalLost = reports.filter((r) => r.type === "lost").length;
   const totalFound = reports.filter((r) => r.type === "found").length;
@@ -156,8 +140,6 @@ export const Dashboard: React.FC = () => {
         totalFound={totalFound}
         openReports={openReports}
         potentialMatches={potentialMatches}
-        onResetDatabase={handleReset}
-        isResetting={isResetting}
       />
 
       {/* Navigation Tabs */}

@@ -1,13 +1,11 @@
 import React from "react";
-import { Search, PackageCheck, AlertCircle, GitCompare, RotateCcw } from "lucide-react";
+import { Search, PackageCheck, AlertCircle, GitCompare } from "lucide-react";
 
 interface DashboardStatsProps {
   totalLost: number;
   totalFound: number;
   openReports: number;
   potentialMatches: number;
-  onResetDatabase: () => void;
-  isResetting: boolean;
 }
 
 export const DashboardStats: React.FC<DashboardStatsProps> = ({
@@ -15,31 +13,16 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
   totalFound,
   openReports,
   potentialMatches,
-  onResetDatabase,
-  isResetting,
 }) => {
   return (
     <div className="mb-8">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-            University Lost &amp; Found
-          </h1>
-          <p className="text-sm text-slate-600 mt-0.5">
-            Campus-wide item tracking and rule-based candidate matching.
-          </p>
-        </div>
-        <div>
-          <button
-            onClick={onResetDatabase}
-            disabled={isResetting}
-            className="min-h-[44px] inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 bg-white border border-slate-300 shadow-sm hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none disabled:opacity-50 transition"
-            title="Populate or reload benchmark sample dataset for testing"
-          >
-            <RotateCcw className={`w-3.5 h-3.5 ${isResetting ? "animate-spin text-blue-600" : ""}`} />
-            {isResetting ? "Resampling..." : "Resample"}
-          </button>
-        </div>
+      <div className="mb-5">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+          University Lost &amp; Found
+        </h1>
+        <p className="text-sm text-slate-600 mt-0.5">
+          Campus-wide item tracking and rule-based candidate matching.
+        </p>
       </div>
 
       {/* Unified Operational Metrics Panel */}

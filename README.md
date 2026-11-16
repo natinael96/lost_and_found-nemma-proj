@@ -215,13 +215,11 @@ VITE_API_BASE_URL=/api
 
 The SQLite database table schema is created automatically on first startup, with foreign keys and WAL mode enabled. The database starts completely empty by default.
 
-To explicitly populate or reset the database with the sample benchmark data:
+To populate or reset the database with the sample benchmark data:
 
 ```bash
 npm run seed
 ```
-
-You can also use the **Resample** button directly in the web app at any time to re-seed.
 
 ### Included Benchmark Scenarios
 
