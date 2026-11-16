@@ -11,17 +11,6 @@ import { db } from "./database/db.js";
 
 export const app: Express = express();
 
-// Auto-seed sample data on first run if database is empty
-try {
-  const countRow = db.prepare("SELECT COUNT(*) as count FROM reports").get() as { count: number };
-  if (countRow.count === 0) {
-    console.log("Empty database detected. Initializing sample demonstration data...");
-    seedData(false);
-  }
-} catch (e) {
-  console.warn("Auto-seed check warning:", e);
-}
-
 app.use(cors());
 app.use(express.json());
 
