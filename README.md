@@ -184,7 +184,7 @@ In alignment with probabilistic entity resolution standards (Fellegi-Sunter meth
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/natinael96/lost_and_found-nemma-proj.git
 cd lost_and_found-nemma-proj
 
 # Install dependencies for all workspaces
