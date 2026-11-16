@@ -328,10 +328,10 @@ npm test
 
 ## 17. AI Usage Disclosure
 
-In alignment with academic and professional honesty guidelines:
+AI tools were used throughout the development process, mainly as research and development assistants.
 
-- Used **ChatGPT and Claude** to research the problem, explore algorithm trade-offs, and shape the technical specification.
-- Evaluated embedding and LLM options but chose an explainable, rule-based algorithm for predictability and transparency.
-- Used **Google DeepMind Antigravity** to help with implementation, boilerplate, and UI development.
-- Used **Ponytail** to audit the codebase for over-engineering and complexity.
-- Reviewed and tested the final implementation against all project requirements.
+- **Research and problem exploration:** Started with ChatGPT and Claude to break down the problem, identify unanswered design questions, explore possible matching approaches, and think through how the system should behave in real-world scenarios.
+- **Algorithm decisions:** Initially explored using embeddings and LLMs to compare item descriptions. However, I decided against making an LLM responsible for matching because I wanted predictable results that could be explained and tested. This led to the weighted, rule-based scoring approach.
+- **Implementation:** Used Google DeepMind Antigravity to assist with setting up the project, generating boilerplate, and implementing parts of the application and UI.
+- **Review and optimization:** Used Ponytail to review the codebase, identify unnecessary complexity, and challenge some implementation decisions. The goal was to keep the solution focused rather than over-engineered.
+- **Final validation:** Used ChatGPT and Claude to revisit the original requirements and think through edge cases. I personally reviewed and tested the implementation to ensure the final decisions and behavior aligned with the assessment.
