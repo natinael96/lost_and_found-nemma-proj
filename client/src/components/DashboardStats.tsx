@@ -34,10 +34,10 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
             onClick={onResetDatabase}
             disabled={isResetting}
             className="min-h-[44px] inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 bg-white border border-slate-300 shadow-sm hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none disabled:opacity-50 transition"
-            title="Reset database to sample dataset for reviewer exploration"
+            title="Populate or reload benchmark sample dataset for testing"
           >
             <RotateCcw className={`w-3.5 h-3.5 ${isResetting ? "animate-spin text-blue-600" : ""}`} />
-            {isResetting ? "Resetting..." : "Reset Sample Data"}
+            {isResetting ? "Resampling..." : "Resample"}
           </button>
         </div>
       </div>

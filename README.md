@@ -221,7 +221,7 @@ To explicitly populate or reset the database with the sample benchmark data:
 npm run seed
 ```
 
-You can also use the **Reset Sample Data** button directly in the web app at any time to re-seed.
+You can also use the **Resample** button directly in the web app at any time to re-seed.
 
 ### Included Benchmark Scenarios
 
